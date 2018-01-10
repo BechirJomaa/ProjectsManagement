@@ -1,0 +1,49 @@
+user_index:
+    path:     /
+    defaults: { _controller: "GestionBundle:User:index" }
+    methods:  GET
+
+client_by_projet:
+    path:     /{id}/list
+    defaults: { _controller: "GestionBundle:User:clientByProjet" }
+    methods:  GET
+
+client_add_by_projet:
+    path:     /{id}/add
+    defaults: { _controller: "GestionBundle:User:addClientToProjet" }
+    methods:  GET
+
+client_affecter_by_projet:
+    path:     /{idProjet}-{idClient}/affecter
+    defaults: { _controller: "GestionBundle:User:affecterClientToProjet" }
+    methods:  GET
+    
+financier_add_by_projet:
+    path:     /{id}/add_financier
+    defaults: { _controller: "GestionBundle:User:addFinancierToProjet" }
+    methods:  GET
+
+financier_affecter_by_projet:
+    path:     /{idProjet}-{idClient}/affecter_financier
+    defaults: { _controller: "GestionBundle:User:affecterFinancierToProjet" }
+    methods:  GET
+
+user_show:
+    path:     /{id}/show
+    defaults: { _controller: "GestionBundle:User:show" }
+    methods:  GET
+
+user_new:
+    path:     /new
+    defaults: { _controller: "GestionBundle:User:new" }
+    methods:  [GET, POST]
+
+user_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "GestionBundle:User:edit" }
+    methods:  [GET, POST]
+
+user_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "GestionBundle:User:delete" }
+    methods:  DELETE

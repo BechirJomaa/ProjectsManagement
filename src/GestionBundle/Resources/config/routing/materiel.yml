@@ -1,0 +1,39 @@
+materiel_index:
+    path:     /
+    defaults: { _controller: "GestionBundle:Materiel:index" }
+    methods:  GET
+    
+materiel_by_tache:
+    path:     /{id}/list
+    defaults: { _controller: "GestionBundle:Materiel:materielByTache" }
+    methods:  GET
+
+materiel_add_by_tache:
+    path:     /{id}/add
+    defaults: { _controller: "GestionBundle:Materiel:addMaterielToTache" }
+    methods:  GET
+    
+materiel_affecter_by_tache:
+    path:     /{idMateriel}-{idTache}/affecter
+    defaults: { _controller: "GestionBundle:Materiel:affecterMaterielToTache" }
+    methods:  GET
+
+materiel_show:
+    path:     /{id}/show
+    defaults: { _controller: "GestionBundle:Materiel:show" }
+    methods:  GET
+
+materiel_new:
+    path:     /new
+    defaults: { _controller: "GestionBundle:Materiel:new" }
+    methods:  [GET, POST]
+
+materiel_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "GestionBundle:Materiel:edit" }
+    methods:  [GET, POST]
+
+materiel_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "GestionBundle:Materiel:delete" }
+    methods:  DELETE

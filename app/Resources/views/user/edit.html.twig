@@ -1,0 +1,22 @@
+{% extends 'layoutAdmin.html.twig' %}
+
+
+{% block body %}
+    <h1>User edit</h1>
+
+    
+         {{ form_widget(edit_form.roles)}}
+        <input type="submit" value="Edit" />
+ 
+
+    <ul>
+        <li>
+            <a href="{{ path('user_index') }}">Back to the list</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

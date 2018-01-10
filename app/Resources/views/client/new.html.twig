@@ -1,0 +1,17 @@
+{% extends 'layoutAdmin.html.twig' %}
+
+{% block body -%}
+    <h1>Ajouter Client</h1>
+
+    <form action="{{ path('client_new') }}" method="POST" {{ form_enctype(form) }}>
+        {{ form(form) }}
+    </form>
+
+    <dl class="record_actions">
+        <dt>
+            <a href="{{ path('client_index') }}" class="btn">
+                Retour à la liste
+            </a>
+        </dt>
+    </dl>
+{% endblock %}

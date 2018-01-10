@@ -1,0 +1,43 @@
+{% extends 'layoutAdmin.html.twig' %}
+
+{% block body %}
+    <h1>Liste des materiels</h1>
+ 
+ 
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+              
+                <th>Nom</th>
+                <th>Type</th>
+                <th>Etat</th>
+                <th>Nbrmatreserve</th>
+                <th>Affecter</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for materiel in materiels %}
+            <tr>
+                <td>{{ materiel.nom }}</td>
+                <td>{{ materiel.type }}</td>
+                <td>{{ materiel.etat }}</td>
+                <td>{{ materiel.nbrMatReserve }}</td>
+                <td>
+                        {% if materiel.tache!=null and materiel.tache.id==tache.id%}<a href="{{ path('materiel_affecter_by_tache', { 'idMateriel': materiel.id, 'idTache': tache.id }) }}">
+                                <i class="icon-check"></i></a> 
+                        {% else %}<a href="{{ path('materiel_affecter_by_tache', { 'idMateriel': materiel.id, 'idTache': tache.id }) }}">
+                                <i class="icon-check-empty"></i> </a>
+                            {% endif %}
+                    </td>
+                <td>
+                     <a href="{{ path('materiel_show', { 'id': materiel.id }) }}"><i class="icon-book"></i></a>
+                     <a href="{{ path('materiel_edit', { 'id': materiel.id }) }}"><i class="icon-edit"></i></a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    
+{% endblock %}

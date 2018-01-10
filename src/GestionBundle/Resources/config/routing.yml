@@ -1,0 +1,19 @@
+gestion_projet:
+    resource: "@GestionBundle/Resources/config/routing/projet.yml"
+    prefix:   /projet
+
+gestion_client:
+        resource: "@GestionBundle/Resources/config/routing/client.yml"
+        prefix:   /client
+
+gestion_materiel:
+    resource: "@GestionBundle/Resources/config/routing/materiel.yml"
+    prefix:   /materiel
+    
+gestion_tache:   
+    resource: "@GestionBundle/Resources/config/routing/tache.yml"
+    prefix:   /tache
+
+gestion_user:   
+    resource: "@GestionBundle/Resources/config/routing/user.yml"
+    prefix:   /user

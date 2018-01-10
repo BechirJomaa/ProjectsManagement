@@ -1,0 +1,17 @@
+{% extends 'layoutAdmin.html.twig' %}
+{% block body %}
+<h2> <strong> Envoyer un email à {{client.email}}</strong> </h2>
+<hr>
+
+<p>{{form_errors(form)}}</p>
+
+
+ {{ form_start(form) }}
+        
+  {{ form_end(form) }}
+
+
+
+<hr>
+
+ {% endblock %}
